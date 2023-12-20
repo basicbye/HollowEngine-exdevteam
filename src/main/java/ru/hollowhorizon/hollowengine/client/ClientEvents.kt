@@ -17,8 +17,6 @@ import ru.hollowhorizon.hc.common.network.send
 import ru.hollowhorizon.hollowengine.HollowEngine
 import ru.hollowhorizon.hollowengine.client.screen.MouseDriver
 import ru.hollowhorizon.hollowengine.client.screen.ProgressManagerScreen
-import ru.hollowhorizon.hollowengine.common.network.*
-import ru.hollowhorizon.hollowengine.common.util.Keybind
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
 object ClientEvents {
@@ -105,10 +103,7 @@ object ClientEvents {
             ) && Minecraft.getInstance().screen == null
         ) {
             Minecraft.getInstance().setScreen(ProgressManagerScreen())
-            return
         }
-
-        if(event.action == 0) KeybindPacket().send(Keybind.fromCode(event.key))
     }
 
     fun initKeys() {
