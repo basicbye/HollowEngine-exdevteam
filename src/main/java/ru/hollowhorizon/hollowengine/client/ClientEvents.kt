@@ -17,6 +17,7 @@ import ru.hollowhorizon.hc.common.network.send
 import ru.hollowhorizon.hollowengine.HollowEngine
 import ru.hollowhorizon.hollowengine.client.screen.MouseDriver
 import ru.hollowhorizon.hollowengine.client.screen.ProgressManagerScreen
+import ru.hollowhorizon.hollowengine.common.network.*
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
 object ClientEvents {
