@@ -4,7 +4,6 @@ import net.minecraft.network.chat.ClickEvent
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.HoverEvent
 import net.minecraft.network.chat.Style
-import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.network.NetworkDirection
 import ru.hollowhorizon.hc.client.models.gltf.manager.GltfManager
 import ru.hollowhorizon.hc.client.utils.mc
@@ -12,8 +11,6 @@ import ru.hollowhorizon.hc.client.utils.mcTranslate
 import ru.hollowhorizon.hc.client.utils.rl
 import ru.hollowhorizon.hc.common.network.HollowPacketV2
 import ru.hollowhorizon.hc.common.network.Packet
-import ru.hollowhorizon.hollowengine.common.events.ServerKeyPressedEvent
-import ru.hollowhorizon.hollowengine.common.util.Keybind
 
 @HollowPacketV2(toTarget = NetworkDirection.PLAY_TO_CLIENT)
 class CopyTextPacket : Packet<String>({ player, value ->
@@ -60,9 +57,4 @@ class ShowModelInfoPacket : Packet<String>({ player, value ->
             }))
         }
     }
-})
-
-@HollowPacketV2(NetworkDirection.PLAY_TO_SERVER)
-class KeybindPacket : Packet<Keybind>({ player, value ->
-    MinecraftForge.EVENT_BUS.post(ServerKeyPressedEvent(player, value))
 })
